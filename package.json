@@ -7,7 +7,7 @@
     "tailwindcss": "^3.1.8"
   },
   "scripts": {
-    "css": "npx tailwindcss -o ./public/css/style.css --watch",
-    "dist": "npx tailwindcss -o ./public/css/style.css --minify"
+    "css": "npx tailwindcss -i res/css/style.css -o ./public/css/style.css --watch",
+    "dist": "npx tailwindcss -i res/css/style.css -o ./public/css/style.css --minify"
   }
 }

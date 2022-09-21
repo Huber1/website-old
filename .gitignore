@@ -1,2 +1,7 @@
 .idea/
 vendor/
+node_modules/
+
+twig_cache/
+
+public/css

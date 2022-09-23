@@ -1,0 +1,28 @@
+{% extends "frame.twig" %}
+
+{% block title %}PGP{% endblock %}
+
+{% block content %}
+    <h2>PGP Key</h2>
+    <p>Meine öffentlichen PGP-Schlüssel sind bei <a href="https://keys.openpgp.org" target="_blank">keys.openpgp.org</a>
+        gespeichert</p>
+    <p class="mt-4 flex flex-col space-y-1 p-2 rounded-xl bg-emerald-50 border-2 border-emerald-100">
+        <span><a href="mailto:{{ email }}">{{ email }}</a></span>
+        <span><a href="https://keys.openpgp.org/vks/v1/by-fingerprint/{{ fingerprint }}"
+                 target="_blank" download="{{ email }}.asc">Schlüssel</a></span>
+        <code class="fingerprint break-all w-fit cursor-pointer select-all" title="Fingerprint">{{ fingerprint }}</code>
+    </p>
+    {% if default %}
+        <p>Solltest du den Schlüssel für eine andere E-Mail-Adresse suchen, dann findest du den Link dazu in jeder
+            E-Mail
+            von mir ganz unten</p>
+    {% endif %}
+
+    <script>
+        document.querySelectorAll('.fingerprint').forEach((item) => {
+            item.addEventListener('mousedown', function () {
+                navigator.clipboard.writeText(item.innerHTML);
+            })
+        });
+    </script>
+{% endblock %}

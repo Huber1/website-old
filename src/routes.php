@@ -1,10 +1,17 @@
 <?php
+// https://github.com/miladrahimi/phprouter
 
-$router = \MiladRahimi\PhpRouter\Router::create();
+use app\controllers\PGPController;
 
-$router->get('/', function () {
-    return view('index');
-});
+$router = \framework\Router::create();
+
+
+$router->view('/', 'index');
+$router->view('/impressum', 'impressum');
+
+$router->get('/pgp/?', [PGPController::class, 'index']);
+$router->get('/pgp/{email}', [PGPController::class, 'mail']);
+
 
 try {
     $router->dispatch();

@@ -6,13 +6,45 @@
     nav.active {
         @apply h-full
     }
+
     .menu-item {
         @apply p-3 flex space-x-3 rounded-xl hover:bg-emerald-50
     }
+
     .menu-item > svg {
         @apply fill-emerald-700
     }
+
     .menu-item.active {
         @apply bg-emerald-100 font-semibold text-emerald-700
+    }
+
+    a {
+        @apply text-emerald-700 bg-gradient-to-r from-current to-current bg-no-repeat bg-[length:100%_2px] bg-left-bottom transition-[background-size] duration-[300ms]
+    }
+
+    a:hover, a:focus {
+        @apply bg-[length:0_2px]
+    }
+
+    a.noline, a:has(svg) {
+        @apply bg-none text-inherit
+    }
+
+    ::selection {
+        @apply bg-emerald-200;
+    }
+
+    h2 {
+        @apply font-medium text-xl mb-2
+    }
+
+    p {
+        @apply mt-2 text-lg
+
+    }
+
+    code {
+        @apply bg-emerald-100 py-1 px-2 rounded-xl
     }
 }

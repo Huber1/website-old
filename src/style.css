@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    nav.active {
+        @apply h-full
+    }
+    .menu-item {
+        @apply p-3 flex space-x-3 rounded-xl hover:bg-emerald-50
+    }
+    .menu-item > svg {
+        @apply fill-emerald-700
+    }
+    .menu-item.active {
+        @apply bg-emerald-100 font-semibold text-emerald-700
+    }
+}

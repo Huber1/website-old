@@ -4,10 +4,15 @@ array_pop($exp);
 define("ROOT", implode(DIRECTORY_SEPARATOR, $exp));
 
 require_once ROOT . '/vendor/autoload.php';
+require_once ROOT . '/framework/helpers.php';
 
 $loader = new \Twig\Loader\FilesystemLoader(ROOT . '/src/templates');
 $twig = new \Twig\Environment($loader, [
-    'cache' => ROOT . '/twig_cache',
+//    'cache' => ROOT . '/twig_cache',
 ]);
 
-echo $twig->render('index.twig', ['name' => 'Moritz']);
+$app = new \framework\App();
+$app->configureRouting();
+
+
+//echo view('index.twig', ['name' => 'Moritz']);

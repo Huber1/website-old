@@ -11,10 +11,10 @@ use Psr\Container\ContainerInterface;
 // extends Router class to add custom methods
 class Router extends \MiladRahimi\PhpRouter\Router
 {
-    public function view(string $path, string $view): void
+    public function view(string $path, string $view, string $activeTab = null): void
     {
-        $this->get($path, function () use ($view) {
-            return view($view);
+        $this->get($path, function () use ($activeTab, $view) {
+            return view($view, ['tab' => $activeTab]);
         });
     }
 

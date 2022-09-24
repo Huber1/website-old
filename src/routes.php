@@ -6,7 +6,7 @@ use app\controllers\PGPController;
 $router = \framework\Router::create();
 
 
-$router->view('/', 'index');
+$router->view('/', 'index', 'home');
 $router->view('/impressum', 'impressum');
 
 $router->get('/pgp/?', [PGPController::class, 'index']);

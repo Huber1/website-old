@@ -10,12 +10,17 @@ class PGPController
         if (isset($_GET['mail']))
             return view('pgp', $this->getKey($_GET['mail']));
 
-        return view('pgp', array_merge(['default' => true], $this->getKey()));
+        return $this->returnView(array_merge(['default' => true], $this->getKey()));
     }
 
     function mail($email): string
     {
-        return view('pgp', $this->getKey($email));
+        return $this->returnView($this->getKey($email));
+    }
+
+    private function returnView($data): string
+    {
+        return view('pgp', array_merge($data, ['tab' => 'pgp']));
     }
 
     private function getKey($email = null): array

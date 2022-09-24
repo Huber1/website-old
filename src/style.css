@@ -8,19 +8,19 @@
     }
 
     .menu-item {
-        @apply p-3 flex space-x-3 rounded-xl hover:bg-emerald-50
+        @apply p-3 flex space-x-3 rounded-xl hover:bg-emerald-50 dark:hover:bg-slate-700
     }
 
     .menu-item > svg {
-        @apply fill-emerald-700
+        @apply fill-emerald-700 dark:fill-emerald-600
     }
 
     .menu-item.active {
-        @apply bg-emerald-100 font-semibold text-emerald-700
+        @apply font-semibold bg-emerald-100 text-emerald-700 dark:bg-slate-700 dark:text-slate-200
     }
 
     a {
-        @apply text-emerald-700 bg-gradient-to-r from-current to-current bg-no-repeat bg-[length:100%_2px] bg-left-bottom transition-[background-size] duration-[300ms]
+        @apply text-emerald-700 dark:text-slate-200 bg-gradient-to-r from-current to-current bg-no-repeat bg-[length:100%_2px] bg-left-bottom transition-[background-size] duration-[300ms]
     }
 
     a:hover, a:focus {
@@ -32,11 +32,15 @@
     }
 
     ::selection {
-        @apply bg-emerald-200;
+        @apply bg-emerald-200 dark:bg-emerald-600/50;
+    }
+
+    h1 {
+        @apply font-medium text-2xl mb-3 dark:text-slate-200
     }
 
     h2 {
-        @apply font-medium text-xl mb-2
+        @apply font-medium text-xl mb-2 dark:text-slate-200
     }
 
     p {
@@ -45,6 +49,6 @@
     }
 
     code {
-        @apply bg-emerald-100 py-1 px-2 rounded-xl
+        @apply bg-emerald-100 dark:bg-emerald-700/25 dark:bg-slate-700 py-1 px-2 rounded-xl
     }
 }

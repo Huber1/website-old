@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-800">
-<header class="sticky top-0 bg-white dark:bg-slate-900 drop-shadow-md select-none flex flex-col">
+<header class="sticky top-0 bg-white dark:bg-slate-900 drop-shadow-md select-none flex flex-col z-50">
     <div class="px-4 py-2 flex flex-row items-center justify-between">
         <a href="/" class="noline p-2">
             <div class="font-medium text-xl text-slate-800 dark:text-slate-200">Moritz Huber</div>
@@ -34,7 +34,8 @@
                     </svg>
                 </a>
             {% endif %}
-            <div class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 cursor-pointer md:hidden" id="menu-toggle">
+            <div class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 cursor-pointer md:hidden"
+                 id="menu-toggle">
                 {# Menu icon #}
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" class="fill-emerald-600">
                     <path d="M0 0h24v24H0V0z" fill="none"/>

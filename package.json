@@ -4,7 +4,6 @@
   },
   "scripts": {
     "dev": "npx tailwindcss -i ./src/style.css -o ./public/css/style.css --watch",
-    "prod": "npx tailwindcss -i ./src/style.css -o ./public/css/style.css --minify",
-    "prod-online": "node/bin/node node/lib/node_modules/npm/bin/npx-cli.js -i ./src/style.css -o ./public/css/style.css --minify"
+    "prod": "npx tailwindcss -i ./src/style.css -o ./public/css/style.css --minify"
   }
 }

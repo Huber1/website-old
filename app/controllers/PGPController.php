@@ -2,7 +2,6 @@
 
 namespace app\controllers;
 
-
 class PGPController
 {
     function index(): string

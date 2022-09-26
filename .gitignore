@@ -6,5 +6,6 @@ twig_cache/
 tailwindcss
 composer/
 composer.phar
+public/.htaccess
 
 public/css

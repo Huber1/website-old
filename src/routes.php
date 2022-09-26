@@ -21,5 +21,6 @@ $router->group(['prefix' => '/api'], function (Router $router) {
 try {
     $router->dispatch();
 } catch (\MiladRahimi\PhpRouter\Exceptions\InvalidCallableException|\MiladRahimi\PhpRouter\Exceptions\RouteNotFoundException $e) {
+    header("HTTP/1.0 404 Not Found");
     echo view('404');
 }

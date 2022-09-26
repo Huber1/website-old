@@ -1,7 +1,7 @@
 <?php
 // https://github.com/miladrahimi/phprouter
 
-use app\controllers\GitController;
+use app\controllers\ScriptController;
 use app\controllers\PGPController;
 use framework\Router;
 
@@ -15,7 +15,7 @@ $router->get('/pgp/?', [PGPController::class, 'index']);
 $router->get('/pgp/{email}', [PGPController::class, 'mail']);
 
 $router->group(['prefix' => '/api'], function (Router $router) {
-    $router->get('/git/update', [GitController::class, 'update']);
+    $router->get('/git/update', [ScriptController::class, 'git_update']);
 });
 
 try {

@@ -4,5 +4,7 @@ node_modules/
 
 twig_cache/
 tailwindcss
+composer/
+composer.phar
 
 public/css

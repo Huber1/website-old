@@ -2,7 +2,7 @@
 // https://github.com/miladrahimi/phprouter
 
 use app\controllers\PGPController;
-use app\controllers\ScriptController;
+use app\controllers\APIController;
 use framework\Router;
 
 $router = Router::create();
@@ -15,7 +15,7 @@ $router->get('/pgp/?', [PGPController::class, 'index']);
 $router->get('/pgp/{email}', [PGPController::class, 'mail']);
 
 $router->group(['prefix' => '/api'], function (Router $router) {
-    $router->any('/git/pull', [ScriptController::class, 'git_pull']);
+    $router->any('/git/pull', [APIController::class, 'git_pull']);
 });
 
 try {

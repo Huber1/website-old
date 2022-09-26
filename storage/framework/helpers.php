@@ -19,6 +19,7 @@ if (!function_exists('view')) {
         try {
             return $twig->render($view, $data);
         } catch (\Twig\Error\LoaderError|\Twig\Error\RuntimeError|\Twig\Error\SyntaxError $e) {
+            header("HTTP/1.0 404 Not Found");
             return view('404');
         }
     }

@@ -16,7 +16,8 @@ class ScriptController
         if (!file_exists(realpath($script_location))) return false;
 
         $params = implode(" ", $params);
-        $command = "screen -dm sh $script_location $params";
+//        $command = "screen -dm sh $script_location $params";
+        $command = "sh $script_location $params";
         echo shell_exec($command);
         return true;
     }

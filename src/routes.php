@@ -15,7 +15,7 @@ $router->get('/pgp/?', [PGPController::class, 'index']);
 $router->get('/pgp/{email}', [PGPController::class, 'mail']);
 
 $router->group(['prefix' => '/api'], function (Router $router) {
-    $router->get('/git/update', [ScriptController::class, 'git_update']);
+    $router->get('/git/pull', [ScriptController::class, 'git_pull']);
 });
 
 try {

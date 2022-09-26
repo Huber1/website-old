@@ -4,7 +4,7 @@ namespace app\controllers;
 
 class ScriptController
 {
-    public function git_update(): void
+    public function git_pull(): void
     {
         $this->run_script("git-pull", ROOT);
     }

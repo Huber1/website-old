@@ -6,7 +6,7 @@ class ScriptController
 {
     public function git_update(): void
     {
-        $this->run_script("git-update", ROOT);
+        $this->run_script("git-pull", ROOT);
     }
 
     private function run_script(string $name, ...$params): bool

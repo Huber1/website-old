@@ -1,1 +1,1 @@
-This is the remake of my website https://moritzhuber.de. Work in progress
+This is the code for my website https://moritzhuber.de

@@ -7,5 +7,6 @@ class APIController
     public function git_pull(): void
     {
         run_script("git-pull", ROOT);
+        echo 'done';
     }
 }

@@ -2,10 +2,11 @@
 vendor/
 node_modules/
 
-twig_cache/
+storage/cache/
 tailwindcss
 composer/
 composer.phar
 public/.htaccess
 
 public/css
+.env

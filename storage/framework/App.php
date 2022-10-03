@@ -6,7 +6,7 @@ class App
 {
     public function __construct()
     {
-        define('ENVIRONMENT', parse_ini_file(ROOT . '/.env'));
+        Env::parse();
     }
 
     public function configureRouting(): void

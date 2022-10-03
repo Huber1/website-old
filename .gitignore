@@ -9,4 +9,5 @@ composer.phar
 public/.htaccess
 
 public/css
+
 .env

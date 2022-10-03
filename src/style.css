@@ -27,7 +27,7 @@
         @apply bg-[length:0_2px]
     }
 
-    a.noline, a:has(svg) {
+    a.noline {
         @apply bg-none text-inherit
     }
 

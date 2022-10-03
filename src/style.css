@@ -20,7 +20,7 @@
     }
 
     a {
-        @apply text-emerald-700 dark:text-slate-200 bg-gradient-to-r from-current to-current bg-no-repeat bg-[length:100%_2px] bg-left-bottom transition-[background-size] duration-[300ms]
+        @apply text-emerald-700 dark:text-slate-300 bg-gradient-to-r from-current to-current bg-no-repeat bg-[length:100%_2px] bg-left-bottom transition-[background-size] duration-[300ms]
     }
 
     a:hover, a:focus {

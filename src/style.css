@@ -8,7 +8,7 @@
     }
 
     .menu-item {
-        @apply p-3 flex space-x-3 rounded-xl hover:bg-emerald-50 dark:hover:bg-slate-700
+        @apply p-3 flex space-x-3 rounded-xl hover:bg-emerald-100 dark:hover:bg-slate-700
     }
 
     .menu-item > svg {

@@ -7,6 +7,8 @@
   },
   "require": {
     "twig/twig": "^3.4",
-    "miladrahimi/phprouter": "^5.1"
+    "miladrahimi/phprouter": "^5.1",
+    "erusev/parsedown": "^1.7",
+    "ext-intl": "*"
   }
 }

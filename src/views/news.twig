@@ -1,0 +1,15 @@
+{% extends "frame.twig" %}
+
+{% block title %}Aktuelles{% endblock %}
+
+{% block content %}
+    <h2>Aktuelles</h2>
+    <div class="mt-4">
+        {% for item in news %}
+            <article class="p-2 text-lg mt-2 rounded-xl bg-emerald-50 dark:bg-slate-800 border-2 border-emerald-100 dark:border dark:border-slate-700">
+                {{ item.date }}
+                {{ item.content|raw }}
+            </article>
+        {% endfor %}
+    </div>
+{% endblock %}

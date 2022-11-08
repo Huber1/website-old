@@ -54,4 +54,12 @@
     code {
         @apply bg-emerald-100 dark:bg-emerald-700/25 dark:bg-slate-700 py-1 px-2 rounded-xl
     }
+
+    ul li {
+       @apply list-disc list-inside
+    }
+
+    ol li {
+        @apply list-decimal list-inside
+    }
 }

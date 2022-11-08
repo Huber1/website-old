@@ -9,7 +9,7 @@ use framework\database\Query;
 
 class NewsModel extends Model
 {
-    public static string $tableName = "News";
+    public static string $tableName = "news";
 
     static function lastFive(): Collection
     {

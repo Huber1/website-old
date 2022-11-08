@@ -11,9 +11,9 @@ class NewsModel extends Model
 {
     public static string $tableName = "news";
 
-    static function lastFive(): Collection
+    static function last(int $count = 5): Collection
     {
         $table = self::tableName();
-        return self::arrayToModel(Database::query(new Query("SELECT * FROM `$table` ORDER BY `date` DESC LIMIT 5")));
+        return self::arrayToModel(Database::query(new Query("SELECT * FROM `$table` ORDER BY `date` DESC LIMIT $count")));
     }
 }

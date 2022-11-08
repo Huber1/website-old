@@ -15,4 +15,9 @@
             Keine Einträge, schau wann anders nochmal vorbei
         {% endfor %}
     </div>
+    {% if news and showMore %}
+        <div class="mt-4 flex justify-center">
+            <a href="?count=10">Mehr laden</a>
+        </div>
+    {% endif %}
 {% endblock %}

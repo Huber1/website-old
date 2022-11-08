@@ -17,7 +17,9 @@ class NewsController extends Controller
 
     public function index(): string
     {
-        $news = NewsModel::lastFive();
+        $count = (int)($_GET['count'] ?? null) ? $_GET['count'] : 5;
+
+        $news = NewsModel::last($count);
 
         $parser = new Parsedown();
         $parser->setSafeMode(true);
@@ -32,6 +34,6 @@ class NewsController extends Controller
             }
         }
 
-        return $this->view('news', ["news" => $news]);
+        return $this->view('news', ["news" => $news, "count" => $count, "showMore" => !isset($_GET['count'])]);
     }
 }

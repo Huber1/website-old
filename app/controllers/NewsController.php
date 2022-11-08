@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\NewsModel;
 use DateTime;
 use Exception;
 use framework\Controller;
@@ -16,21 +17,17 @@ class NewsController extends Controller
 
     public function index(): string
     {
-        $news = [
-            ['date' => "2004-02-12T15:19:21+00:00", 'content' => 'Inhalt'],
-            ['date' => "2022-11-07T18:46:20+01:00", 'content' => "Und der Content"],
-            ['date' => "2023-01-05", 'content' => "#Hi \n Hallo [Link](https://google.de)"],
-        ];
+        $news = NewsModel::lastFive();
 
         $parser = new Parsedown();
         $parser->setSafeMode(true);
 
-        foreach ($news as &$item) {
-            $item['content'] = $parser->parse($item['content']);
+        foreach ($news as $item) {
+            $item->content = $parser->parse($item->content);
             try {
-                $dt = new DateTime($item['date']);
+                $dt = new DateTime($item->date);
                 // Format Mo 7. Nov
-                $item['date'] = $this->weekdays[$dt->format("N") - 1] . " " . $dt->format("j. ") . $this->months[$dt->format("n") - 1];
+                $item->date = $this->weekdays[$dt->format("N") - 1] . " " . $dt->format("j. ") . $this->months[$dt->format("n") - 1];
             } catch (Exception $e) {
             }
         }

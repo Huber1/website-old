@@ -13,6 +13,20 @@ function run_script(string $name, ...$params): bool|string|null
     return shell_exec("sh $script_location $params");
 }
 
+function getClassName(string $class): string
+{
+    $exp = explode("\\", $class);
+    return end($exp);
+}
+
+function isAssociativeArray(array $array): bool
+{
+    if ([] == $array) {
+        return false;
+    }
+    return array_keys($array) !== range(0, count($array) - 1);
+}
+
 function view(string $view, array $data = [], int $status = 200): string
 {
     $loader = new \Twig\Loader\FilesystemLoader(ROOT . '/src/views');

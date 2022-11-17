@@ -1,7 +1,7 @@
 <?php
 // https://github.com/miladrahimi/phprouter
 
-use app\controllers\NewsController;
+use app\controllers\AktuellesController;
 use app\controllers\PGPController;
 use app\controllers\APIController;
 use framework\Router;
@@ -12,7 +12,7 @@ $router = Router::create();
 $router->view('/', 'index', 'home');
 $router->view('/impressum', 'impressum');
 
-$router->get('/aktuelles', [NewsController::class, 'index']);
+$router->get('/aktuelles', [AktuellesController::class, 'index']);
 
 $router->get('/pgp/?', [PGPController::class, 'index']);
 $router->get('/pgp/{email}', [PGPController::class, 'mail']);

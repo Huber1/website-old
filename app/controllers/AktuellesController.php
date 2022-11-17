@@ -2,15 +2,15 @@
 
 namespace app\controllers;
 
-use app\models\NewsModel;
+use app\models\AktuellesModel;
 use DateTime;
 use Exception;
 use framework\Controller;
 use Parsedown;
 
-class NewsController extends Controller
+class AktuellesController extends Controller
 {
-    static string $tab = 'news';
+    static string $tab = 'aktuelles';
 
     private array $weekdays = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"];
     private array $months = ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"];
@@ -19,7 +19,7 @@ class NewsController extends Controller
     {
         $count = (int)($_GET['count'] ?? null) ? $_GET['count'] : 5;
 
-        $news = NewsModel::last($count);
+        $news = AktuellesModel::last($count);
 
         $parser = new Parsedown();
         $parser->setSafeMode(true);

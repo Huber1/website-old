@@ -12,7 +12,7 @@ $router = Router::create();
 $router->view('/', 'index', 'home');
 $router->view('/impressum', 'impressum');
 
-$router->get('/news', [NewsController::class, 'index']);
+$router->get('/aktuelles', [NewsController::class, 'index']);
 
 $router->get('/pgp/?', [PGPController::class, 'index']);
 $router->get('/pgp/{email}', [PGPController::class, 'mail']);

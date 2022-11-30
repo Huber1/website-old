@@ -15,6 +15,7 @@ $router->view('/impressum', 'impressum');
 $router->get('/aktuelles', [AktuellesController::class, 'index']);
 
 $router->get('/pgp/?', [PGPController::class, 'index']);
+$router->get('/pgp/key/{fingerprint}', [PGPController::class, 'key']);
 $router->get('/pgp/{email}', [PGPController::class, 'mail']);
 
 $router->group(['prefix' => '/api'], function (Router $router) {

@@ -4,11 +4,11 @@
 
 {% block content %}
     <h2>PGP Key</h2>
-    <p>Meine öffentlichen PGP-Schlüssel sind bei keys.openpgp.org
-        gespeichert</p>
+    <p>Hier kannst du meinen öffentlichen PGP-Schlüssel herunterladen, um mir damit mails (oder andere Dinge) zu
+        verschlüsseln und zu signieren</p>
     <p class="mt-4 flex flex-col space-y-1 p-2 rounded-xl bg-emerald-50 dark:bg-slate-800 border-2 border-emerald-100 dark:border dark:border-slate-700">
         <span><a href="mailto:{{ email }}">{{ email }}</a></span>
-        <span><a href="https://keys.openpgp.org/vks/v1/by-fingerprint/{{ fingerprint }}"
+        <span><a href="/pgp/key/{{ fingerprint|replace({' ': ''}) }}"
                  target="_blank" download="{{ email }}.asc">Download</a></span>
         <code class="fingerprint break-all w-fit cursor-pointer select-all" title="Fingerprint">{{ fingerprint }}</code>
     </p>

@@ -1,4 +1,10 @@
 {
-  "2nd@moritzhuber.de": "2408417878CB122C7C474991A3049540CED714C9",
-  "mail@moritzhuber.de": "2C7921AC3BCEC98A6783D2F3E281AD5202EA2DE2"
+  "mail@moritzhuber.de": {
+    "fingerprint": "2C79 21AC 3BCE C98A 6783 D2F3 E281 AD52 02EA 2DE2",
+    "filename": "Moritz_mail_public.asc"
+  },
+  "2nd@moritzhuber.de": {
+    "fingerprint": "2408 4178 78CB 122C 7C47 4991 A304 9540 CED7 14C9",
+    "filename": "Moritz_2nd_public.asc"
+  }
 }

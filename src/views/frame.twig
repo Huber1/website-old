@@ -106,9 +106,9 @@
                 document.querySelector('#nav-container').classList.toggle('hidden');
             })
         </script>
-        <div class="mt-4 p-4 md:flex-1 bg-white dark:bg-slate-900 rounded-xl drop-shadow-md text-slate-900 dark:text-slate-400 max-w-5xl">
+        <main class="mt-4 p-4 md:flex-1 bg-white dark:bg-slate-900 rounded-xl drop-shadow-md text-slate-900 dark:text-slate-400 max-w-5xl">
             {% block content %}{% endblock %}
-        </div>
+        </main>
     </div>
     <footer class="p-4 bg-white dark:bg-slate-900 dark:text-slate-400 drop-shadow-md text-center text-slate-800">
         <a href="/impressum">Impressum</a> | &copy 2020 - {{ 'now' | date('Y') }} by <a href="/" class="noline">Moritz

@@ -47,8 +47,12 @@
         @apply font-medium text-lg mb-1 dark:text-slate-200
     }
 
+    main {
+        @apply text-lg
+    }
+
     p {
-        @apply mt-2 text-lg
+        @apply mt-2
     }
 
     code {

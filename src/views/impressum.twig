@@ -193,10 +193,11 @@
     <script>
         setTimeout(() => {
             document.querySelectorAll(".email_replace").forEach(item => {
-                item.replaceWith("deutschlandreguliertdasinternetkaputt@moritzhuber.de")
+                // base64decode
+                item.replaceWith(window.atob("ZGV1dHNjaGxhbmRyZWd1bGllcnRkYXNpbnRlcm5ldGthcHV0dEBtb3JpdHpodWJlci5kZQ=="))
             })
             document.querySelectorAll(".tel_replace").forEach(item => {
-                item.replaceWith("015156533121")
+                item.replaceWith(window.atob("MDE1MTU2NTMzMTIx"))
             })
         }, 200);
     </script>

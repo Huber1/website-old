@@ -16,6 +16,7 @@ $router->view('/impressum', 'impressum');
 $router->get('/aktuelles', "AktuellesController@index");
 
 $router->get('/pgp', "PGPController@index");
+$router->get('/pgp/key/{fingerprint}', "PGPController@key");
 $router->get('/pgp/{email}', "PGPController@mail");
 
 

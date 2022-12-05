@@ -4,22 +4,22 @@ namespace app\controllers;
 
 class PGPController
 {
-    function index(): string
+    function index(): void
     {
         if (isset($_GET['mail']))
-            return view('pgp', $this->getKey($_GET['mail']));
+            echo view('pgp', $this->getKey($_GET['mail']));
 
-        return $this->returnView(array_merge(['default' => true], $this->getKey()));
+        $this->echoView(array_merge(['default' => true], $this->getKey()));
     }
 
-    function mail($email): string
+    function mail($email): void
     {
-        return $this->returnView($this->getKey($email));
+        $this->echoView($this->getKey($email));
     }
 
-    private function returnView($data): string
+    private function echoView($data): void
     {
-        return view('pgp', array_merge($data, ['tab' => 'pgp']));
+        echo view('pgp', array_merge($data, ['tab' => 'pgp']));
     }
 
     private function getKey($email = null): array

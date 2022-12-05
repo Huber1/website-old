@@ -15,7 +15,7 @@ class AktuellesController extends Controller
     private array $weekdays = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"];
     private array $months = ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"];
 
-    public function index(): string
+    public function index(): void
     {
         $count = (int)($_GET['count'] ?? null) ? $_GET['count'] : 5;
 
@@ -23,7 +23,6 @@ class AktuellesController extends Controller
 
         $parser = new Parsedown();
         $parser->setSafeMode(true);
-
         foreach ($news as $item) {
             $item->content = $parser->parse($item->content);
             try {
@@ -31,9 +30,10 @@ class AktuellesController extends Controller
                 // Format Mo 7. Nov
                 $item->date = $this->weekdays[$dt->format("N") - 1] . " " . $dt->format("j. ") . $this->months[$dt->format("n") - 1];
             } catch (Exception $e) {
+                echo "error";
             }
         }
 
-        return $this->view('news', ["news" => $news, "count" => $count, "showMore" => !isset($_GET['count'])]);
+        $this->view('news', ["news" => $news, "count" => $count, "showMore" => !isset($_GET['count'])]);
     }
 }

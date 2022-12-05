@@ -9,8 +9,8 @@ class Controller
         return get_called_class()::$tab ?? null;
     }
 
-    function view(string $view, array $data = []): string
+    function view(string $view, array $data = []): void
     {
-        return view($view, array_merge($data, ['tab' => self::tab()]));
+        echo view($view, array_merge($data, ['tab' => self::tab()]));
     }
 }

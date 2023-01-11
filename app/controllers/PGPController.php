@@ -4,11 +4,12 @@ namespace app\controllers;
 
 class PGPController
 {
-    function index(): string
+    function index(): void
     {
-        if (isset($_GET['mail'])) return view('pgp', $this->getKey($_GET['mail']));
+        if (isset($_GET['mail']))
+            echo view('pgp', $this->getKey($_GET['mail']));
 
-        return $this->returnView(array_merge(['default' => true], $this->getKey()));
+        $this->echoView(array_merge(['default' => true], $this->getKey()));
     }
 
     function key($fingerprint)
@@ -28,9 +29,14 @@ class PGPController
 //        return json_encode($key);
     }
 
-    function mail($email): string
+    function mail($email): void
     {
-        return $this->returnView($this->getKey($email));
+        $this->echoView($this->getKey($email));
+    }
+
+    private function echoView($data): void
+    {
+        echo view('pgp', array_merge($data, ['tab' => 'pgp']));
     }
 
     private function getKey($email = null): array
@@ -53,19 +59,9 @@ class PGPController
         $email = array_key_first($keys);
         $fingerprint = $keys[$email]["fingerprint"];
 
-        if (file_exists(ROOT . "/storage/app/pgp/keys/" . $keys[$email]["filename"]))
-            return [
-                "email" => $email,
-                "fingerprint" => $fingerprint,
-                "filename" => $keys[$email]["filename"],
-                "filepath" => realpath(ROOT . "/storage/app/pgp/keys/" . $keys[$email]["filename"])
-            ];
+        if (isset($keys[$email]))
+            return ['email' => $email, 'fingerprint' => $keys[$email]];
         else
-            return null;
-    }
-
-    private function returnView($data): string
-    {
-        return view('pgp', array_merge($data, ['tab' => 'pgp']));
+            return $this->getKey('2nd@moritzhuber.de');
     }
 }

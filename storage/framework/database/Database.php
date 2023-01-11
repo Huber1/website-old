@@ -53,8 +53,8 @@ class Database
             }
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (\PDOException $e) {
-//            var_dump($e);
-            echo json_encode($e);
+            if (env("MODE") == "DEVELOPMENT")
+                var_dump($e);
         }
         die();
     }

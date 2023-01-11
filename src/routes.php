@@ -6,24 +6,26 @@ use app\controllers\PGPController;
 use app\controllers\APIController;
 use framework\Router;
 
-$router = Router::create();
+$router = new Router();
+$router->setNamespace("\\app\\controllers");
 
 
 $router->view('/', 'index', 'home');
 $router->view('/impressum', 'impressum');
 
-$router->get('/aktuelles', [AktuellesController::class, 'index']);
+$router->get('/aktuelles', "AktuellesController@index");
 
-$router->get('/pgp/?', [PGPController::class, 'index']);
-$router->get('/pgp/key/{fingerprint}', [PGPController::class, 'key']);
-$router->get('/pgp/{email}', [PGPController::class, 'mail']);
+$router->get('/pgp', "PGPController@index");
+$router->get('/pgp/key/{fingerprint}', "PGPController@key");
+$router->get('/pgp/{email}', "PGPController@mail");
 
-$router->group(['prefix' => '/api'], function (Router $router) {
-    $router->any('/git/pull', [APIController::class, 'git_pull']);
+
+$router->mount('/api', function() use ($router) {
+    $router->all('/git/pull', "APIController@git_pull");
 });
 
-try {
-    $router->dispatch();
-} catch (\MiladRahimi\PhpRouter\Exceptions\InvalidCallableException|\MiladRahimi\PhpRouter\Exceptions\RouteNotFoundException $e) {
-    echo view('404', status: 404);
-}
+$router->set404(function () {
+    echo view("404", status: 404);
+});
+
+$router->run();

@@ -1,7 +1,7 @@
 <?php
 // https://github.com/miladrahimi/phprouter
 
-use app\controllers\AktuellesController;
+use app\controllers\NewsController;
 use app\controllers\PGPController;
 use app\controllers\APIController;
 use framework\Router;
@@ -13,7 +13,7 @@ $router->setNamespace("\\app\\controllers");
 $router->view('/', 'index', 'home');
 $router->view('/impressum', 'impressum');
 
-$router->get('/aktuelles', "AktuellesController@index");
+$router->get('/aktuelles', "NewsController@index");
 
 $router->get('/pgp', "PGPController@index");
 $router->get('/pgp/key/{fingerprint}', "PGPController@key");

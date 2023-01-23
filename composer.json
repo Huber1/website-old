@@ -6,7 +6,7 @@
     }
   },
   "require": {
-    "twig/twig": "^3.4",
+    "twig/twig": "^3.5",
     "erusev/parsedown": "^1.7",
     "bramus/router": "~1.6",
     "ext-pdo": "*"

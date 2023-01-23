@@ -8,7 +8,7 @@ use Exception;
 use framework\Controller;
 use Parsedown;
 
-class AktuellesController extends Controller
+class NewsController extends Controller
 {
     static string $tab = 'aktuelles';
 

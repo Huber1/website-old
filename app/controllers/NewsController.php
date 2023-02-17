@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-use app\models\AktuellesModel;
+use app\models\NewsModel;
 use DateTime;
 use Exception;
 use framework\Controller;
@@ -19,7 +19,7 @@ class NewsController extends Controller
     {
         $count = (int)($_GET['count'] ?? null) ? $_GET['count'] : 5;
 
-        $news = AktuellesModel::last($count);
+        $news = NewsModel::last($count);
 
         $parser = new Parsedown();
         $parser->setSafeMode(true);

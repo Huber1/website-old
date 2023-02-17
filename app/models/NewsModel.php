@@ -7,7 +7,7 @@ use framework\database\Database;
 use framework\database\Model;
 use framework\database\Query;
 
-class AktuellesModel extends Model
+class NewsModel extends Model
 {
     public static string $tableName = "news";
 

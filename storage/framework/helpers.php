@@ -53,13 +53,15 @@ function clear_cache(): void
 {
     $dir = realpath(ROOT . "/storage/cache");
 
-    $it = new RecursiveDirectoryIterator($dir, FilesystemIterator::SKIP_DOTS);
-    $files = new RecursiveIteratorIterator($it, RecursiveIteratorIterator::CHILD_FIRST);
-    foreach ($files as $file) {
-        if ($file->isDir())
-            rmdir($file->getRealPath());
-        else
-            unlink($file->getRealPath());
+    if ($dir) {
+        $it = new RecursiveDirectoryIterator($dir, FilesystemIterator::SKIP_DOTS);
+        $files = new RecursiveIteratorIterator($it, RecursiveIteratorIterator::CHILD_FIRST);
+        foreach ($files as $file) {
+            if ($file->isDir())
+                rmdir($file->getRealPath());
+            else
+                unlink($file->getRealPath());
+        }
+        rmdir($dir);
     }
-    rmdir($dir);
 }

@@ -48,3 +48,18 @@ function view(string $view, array $data = [], int $status = 200): string
         return view('404', status: 404);
     }
 }
+
+function clear_cache(): void
+{
+    $dir = realpath(ROOT . "/storage/cache");
+
+    $it = new RecursiveDirectoryIterator($dir, FilesystemIterator::SKIP_DOTS);
+    $files = new RecursiveIteratorIterator($it, RecursiveIteratorIterator::CHILD_FIRST);
+    foreach ($files as $file) {
+        if ($file->isDir())
+            rmdir($file->getRealPath());
+        else
+            unlink($file->getRealPath());
+    }
+    rmdir($dir);
+}

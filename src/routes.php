@@ -22,6 +22,7 @@ $router->get('/pgp/{email}', "PGPController@mail");
 
 $router->mount('/api', function() use ($router) {
     $router->all('/git/pull', "APIController@git_pull");
+    $router->all('/dependencies', "APIController@dependencies");
 });
 
 $router->set404(function () {

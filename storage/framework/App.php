@@ -7,7 +7,7 @@ class App
     public function __construct()
     {
         Env::parse();
-        header("X-Robots-Tag: noindex");
+        // header("X-Robots-Tag: noindex");
     }
 
     public function configureRouting(): void
